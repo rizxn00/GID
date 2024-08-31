@@ -1,0 +1,1 @@
+GID is a to-do app built with Next.js and Node.js, designed for efficient task management. It features a clean, modern interface, real-time updates, and powerful backend functionality using TypeScript and MongoDB.
