@@ -14,7 +14,7 @@ const origin: string = process.env.ORIGIN || ''
 
 app.use(express.json()); 
 app.use (cors ({
-  origin:origin,
+  origin: 'https://gid-rizins-projects.vercel.app',
   methods:['GET','POST', 'PUT', 'DELETE'],
   credentials:true
 }))
