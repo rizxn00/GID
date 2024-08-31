@@ -1,15 +1,26 @@
 {
-    "build": {
-      "command": "npm run build"
-    },
-    "routes": [
-      {
-        "src": "/api/(.*)",
-        "dest": "api/$1"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "index.html"
+  "version": 2,
+  "builds": [
+    {
+      "src": "./app.js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": [
+          "routes/**",
+          "controllers/**",
+          "services/**",
+          "config/**",
+          "middleware/**",
+          "types/**",
+          "models/**"
+        ]
       }
-    ]
-  }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/app.js"
+    }
+  ]
+} 
