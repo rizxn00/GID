@@ -2,7 +2,6 @@
     "build": {
       "command": "npm run build"
     },
-    "output": "build",
     "routes": [
       {
         "src": "/api/(.*)",
