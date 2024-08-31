@@ -9,7 +9,7 @@ import todoRoutes from './routes/todo.routes'
 dotenv.config();
 
 const app: Application = express();
-const origin: string = process.env.VERCEL_ORIGIN || ''
+const origin: string = process.env.ORIGIN || ''
 
 
 app.use(express.json()); 

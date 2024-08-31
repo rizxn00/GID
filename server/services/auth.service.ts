@@ -43,7 +43,7 @@ export const loginUser = async (email: string, password: string): Promise<{ user
 
   const token = jwt.sign(
     { id: user._id, email: user.email },
-    process.env.VERCEL_JWT_SECRET_KEY!,
+    process.env.JWT_SECRET_KEY!,
     { expiresIn: '10d' }
   );
 
