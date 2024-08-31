@@ -1,0 +1,22 @@
+# Node.js specific
+node_modules/
+npm-debug.log
+yarn-error.log
+.pnp.js
+
+# Editor config files
+.editorconfig
+.vscode/
+.idea/
+
+# Build output
+build/
+
+# Test results
+coverage/
+
+# Temporary files
+.DS_Store
+*.swp
+
+.env

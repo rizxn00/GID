@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: 247 147 34;
+  --color-primary-contrast: 255 255 255;
+  --color-background: 255 255 255;
+  --color-surface: 249 249 249;
+  --color-surfaced: 235 235 235;
+  --color-text: 33 33 33;
+  --color-secondary: 150 150 150;
+  --color-success: 0 200 81;
+  --color-info: 51 181 229;
+  --color-warn: 255 187 51;
+  --color-error: 254 78 78;
+}
+
+:root[class~="dark"] {
+  --color-primary: 247 147 34;
+  --color-primary-contrast: 255 255 255;
+  --color-background: 0 0 0;
+  --color-surface: 23 23 23;
+  --color-surfaced: 10 10 10;
+  --color-text: 255 255 255;
+  --color-secondary: 150 150 150;
+  --color-success: 0 200 81;
+  --color-info: 51 181 229;
+  --color-warn: 255 187 51;
+  --color-error: 254 78 78;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
