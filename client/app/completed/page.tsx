@@ -47,7 +47,7 @@ function Completed() {
     const fetchTodos = async (): Promise<void> => {
         try {
           setLoading(true);
-          const response = await axios.get<Todo[]>(`${process.env.VERCEL_API_KEY}/api/todos/completed`, {
+          const response = await axios.get<Todo[]>(`${process.env.NEXT_PUBLIC_API_ENDPOINT }/api/todos/completed`, {
             headers: {
               'Content-Type': 'application/json',
               'Authorization': `Bearer ${token}`
@@ -66,7 +66,7 @@ function Completed() {
             const updatedTodo = todos.find(todo => todo._id === id)
             if (updatedTodo) {
                 updatedTodo.completed = !updatedTodo.completed
-                await axios.put(`${process.env.VERCEL_API_KEY}/api/todos/${id}`, updatedTodo, {
+                await axios.put(`${process.env.NEXT_PUBLIC_API_ENDPOINT }/api/todos/${id}`, updatedTodo, {
                     headers: {
                         'Content-Type': 'application/json',
                         'Authorization': `Bearer ${token}`

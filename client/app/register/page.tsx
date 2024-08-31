@@ -27,7 +27,7 @@ export default function Register() {
         }
 
         try {
-            const response:any = await axios.post(`${process.env.VERCEL_API_KEY}/api/auth/register`, payload )
+            const response:any = await axios.post(`${process.env.NEXT_PUBLIC_API_ENDPOINT }/api/auth/register`, payload )
             if (response.status === 201) {
                 toast.success('Successfully registered')
                 setTimeout(() => {

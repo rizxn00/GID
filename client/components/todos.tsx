@@ -38,7 +38,7 @@ export default function Todos() {
         }
       
         try {
-          const response = await axios.post(`${process.env.VERCEL_API_KEY}/api/todos`, {
+          const response = await axios.post(`${process.env.NEXT_PUBLIC_API_ENDPOINT }/api/todos`, {
             title: todoTitle,
           }, {
             headers: {
@@ -70,7 +70,7 @@ export default function Todos() {
     const fetchTodos = async (): Promise<void> => {
         try {
           setLoading(true);
-          const response = await axios.get<Todo[]>(`${process.env.VERCEL_API_KEY}/api/todos`, {
+          const response = await axios.get<Todo[]>(`${process.env.NEXT_PUBLIC_API_ENDPOINT }/api/todos`, {
             headers: {
               'Content-Type': 'application/json',
               'Authorization': `Bearer ${token}`
@@ -91,7 +91,7 @@ export default function Todos() {
             const updatedTodo = todos.find(todo => todo._id === id)
             if (updatedTodo) {
                 updatedTodo.completed = !updatedTodo.completed
-                await axios.put(`${process.env.VERCEL_API_KEY}/api/todos/${id}`, updatedTodo, {
+                await axios.put(`${process.env.NEXT_PUBLIC_API_ENDPOINT }/api/todos/${id}`, updatedTodo, {
                     headers: {
                         'Content-Type': 'application/json',
                         'Authorization': `Bearer ${token}`
@@ -109,7 +109,7 @@ export default function Todos() {
 
     const deleteTodo = async (id: string) => {
         try {
-            const response = await axios.delete(`${process.env.VERCEL_API_KEY}/api/todos/${id}`, {
+            const response = await axios.delete(`${process.env.NEXT_PUBLIC_API_ENDPOINT }/api/todos/${id}`, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${token}`
@@ -132,7 +132,7 @@ export default function Todos() {
             const updatedTodo = todos.find(todo => todo._id === id);
             if (updatedTodo && newTitle.trim()) {
                 updatedTodo.title = newTitle;
-                await axios.put(`${process.env.VERCEL_API_KEY}/api/todos/${id}`, { title: newTitle }, {
+                await axios.put(`${process.env.NEXT_PUBLIC_API_ENDPOINT }/api/todos/${id}`, { title: newTitle }, {
                     headers: {
                         'Content-Type': 'application/json',
                         'Authorization': `Bearer ${token}`

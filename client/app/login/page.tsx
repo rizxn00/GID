@@ -25,7 +25,7 @@ export default function Login() {
         }
 
         try {
-            const response:any = await axios.post(`${process.env.VERCEL_API_KEY}/api/auth/login`, payload)
+            const response:any = await axios.post(`${process.env.NEXT_PUBLIC_API_ENDPOINT }/api/auth/login`, payload)
             
             console.log(response)
 

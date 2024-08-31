@@ -47,7 +47,7 @@ function Dashboard() {
         try {
             if (!token) throw new Error('No token found');
             
-            const response = await axios.get<Todo[]>(`${process.env.VERCEL_API_KEY}/api/todos`, {
+            const response = await axios.get<Todo[]>(`${process.env.NEXT_PUBLIC_API_ENDPOINT }/api/todos`, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${token}`

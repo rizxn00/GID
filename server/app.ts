@@ -9,10 +9,12 @@ import todoRoutes from './routes/todo.routes'
 dotenv.config();
 
 const app: Application = express();
+const origin: string = process.env.ORIGIN || 'http://localhost:3000'
+
 
 app.use(express.json()); 
 app.use (cors ({
-  origin:['http://localhost:3000'],
+  origin:origin,
   methods:['GET','POST', 'PUT', 'DELETE'],
   credentials:true
 }))

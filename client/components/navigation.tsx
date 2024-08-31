@@ -51,7 +51,7 @@ const Navigation: React.FC = () => {
     const fetchDetails = async (): Promise<void> => {
         try {
           setLoading(true);
-          const response = await axios.get(`${process.env.VERCEL_API_KEY}/api/auth/details`, {
+          const response = await axios.get(`${process.env.NEXT_PUBLIC_API_ENDPOINT }/api/auth/details`, {
             headers: {
               'Content-Type': 'application/json',
               'Authorization': `Bearer ${token}`
