@@ -13,7 +13,7 @@ export const authMiddleware = (req: CustomRequest, res: Response, next: NextFunc
   }
 
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY as string);
+    const decoded = jwt.verify(token, process.env.VERCEL_JWT_SECRET_KEY as string);
     req.user = decoded;
     next();
   } catch (error) {
